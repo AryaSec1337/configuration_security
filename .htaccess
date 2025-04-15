@@ -6,8 +6,8 @@
 # BEGIN security
 <IfModule mod_headers.c>
     Header set Age "216000"
-    Header set X-Frame-Options SAMEORIGIN #arba DENY #Mitigation Clickjacking
-    Header set X-XSS-Protection "1; mode=block" #Mitigation XSS Alert
+    Header set X-Frame-Options SAMEORIGIN #arba DENY # Mitigation Clickjacking
+    Header set X-XSS-Protection "1; mode=block" # Mitigation XSS Alert
     Header set X-Content-Type-Options "nosniff"
     Header set X-Permitted-Cross-Domain-Policies "none"
     Header set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" env=HTTPS
@@ -18,10 +18,10 @@
     Header set Feature-Policy "accelerometer 'none'; ambient-light-sensor 'self'; autoplay 'self'; camera 'none'; cookie 'self'; docwrite 'self'; domain 'self'; encrypted-media 'self'; fullscreen 'self'; geolocation 'none'; gyroscope 'none'; magnetometer 'none'; microphone 'none'; midi 'none'; payment 'self'; picture-in-picture 'self'; speaker 'self'; sync-script 'self'; sync-xhr 'self'; unsized-media 'self'; usb 'none'; vertical-scroll 'self'; vibrate 'none'; vr 'none'"
     Header set Permissions-Policy "accelerometer=Origin(), autoplay=(), camera=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), publickey-credentials-get=(), usb=()"
     Header set Expect-CT: enforce, max-age=31536000 #this couses 500 problems often with WP
-    Header always unset X-Powered-By #Hide PHP Version
-    Header always unset server #Hide PHP Version
-    Header unset X-Powered-By #Hide PHP Version
-    Header unset server #Hide PHP Version
+    Header always unset X-Powered-By # Hide PHP Version
+    Header always unset server # Hide PHP Version
+    Header unset X-Powered-By # Hide PHP Version
+    Header unset server # Hide PHP Version
     Header append Vary "Accept-Encoding, User-Agent, Referer"
 </IfModule>
 # END BEGIN security
